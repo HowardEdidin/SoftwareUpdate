@@ -1,0 +1,39 @@
+﻿{
+	"durableTask": {
+		"HubName": "MyTaskHub",
+		"ControlQueueBatchSize": 32,
+		"PartitionCount": 4,
+		"ControlQueueVisibilityTimeout": "00:05:00",
+		"WorkItemQueueVisibilityTimeout": "00:05:00",
+		"MaxConcurrentActivityFunctions": 10,
+		"MaxConcurrentOrchestratorFunctions": 10,
+		"AzureStorageConnectionStringName": "AzureWebJobsStorage",
+		"TraceInputsAndOutputs": false,
+		"EventGridTopicEndpoint": "https://devices.centralus-1.eventgrid.azure.net/api/events",
+		"EventGridKeySettingName":  "EventGridKey"
+	},
+	"logger": {
+		"categoryFilter": {
+			"defaultLevel": "Information",
+			"categoryLevels": {
+				"Host": "Error",
+				"Function": "Error",
+				"Host.Aggregator": "Information"
+			}
+		},
+		"tracing": {
+			"consoleLevel": "verbose",
+			"fileLoggingMode": "debugOnly"
+		},
+		"applicationInsights": {
+			"sampling": {
+				"isEnabled": true,
+				"maxTelemetryItemsPerSecond" : 5
+			}
+		}
+
+
+
+
+	}
+}

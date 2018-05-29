@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  devicesoftwareupdate:
+    image: ${DOCKER_REGISTRY}devicesoftwareupdate
+    build:
+      context: .
+      dockerfile: ../SoftwareUpdateService/DeviceSoftwareUpdate/Dockerfile
+
+  web:
+    image: ${DOCKER_REGISTRY}web
+    build:
+      context: .
+      dockerfile: Web/Dockerfile
+

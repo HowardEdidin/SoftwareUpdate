@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk;Microsoft.NET.Sdk.Publish">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <IsServiceFabricServiceProject>True</IsServiceFabricServiceProject>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="App.config" />
+    <None Remove="PackageRoot\Config\Settings.xml" />
+    <None Remove="PackageRoot\ServiceManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Hl7.Fhir.R4" Version="0.95.0" />
+    <PackageReference Include="Microsoft.Azure.DocumentDB" Version="1.22.0" />
+    <PackageReference Include="Microsoft.Azure.WebJobs.Extensions" Version="3.0.0-beta5" />
+    <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.DurableTask" Version="1.4.1" />
+    <PackageReference Include="Microsoft.Azure.WebJobs.Logging.ApplicationInsights" Version="3.0.0-beta5" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="2.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="2.0.2" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.4.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Azure.Devices">
+      <HintPath>C:\Users\HowardEdidin\.nuget\packages\microsoft.azure.devices\1.6.0\lib\netstandard2.0\Microsoft.Azure.Devices.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Devices.Shared">
+      <HintPath>C:\Users\HowardEdidin\.nuget\packages\microsoft.azure.devices.shared\1.15.0-preview-003\lib\netstandard2.0\Microsoft.Azure.Devices.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.DocumentDB.Core">
+      <HintPath>C:\Users\HowardEdidin\.nuget\packages\microsoft.azure.documentdb.core\1.9.1\lib\netstandard1.6\Microsoft.Azure.DocumentDB.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.KeyVault">
+      <HintPath>C:\Users\HowardEdidin\.nuget\packages\microsoft.azure.keyvault\2.3.2\lib\netstandard1.4\Microsoft.Azure.KeyVault.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Services.AppAuthentication">
+      <HintPath>C:\Users\HowardEdidin\.nuget\packages\microsoft.azure.services.appauthentication\1.0.1\lib\netstandard1.4\Microsoft.Azure.Services.AppAuthentication.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Rest.ClientRuntime">
+      <HintPath>C:\Users\HowardEdidin\.nuget\packages\microsoft.rest.clientruntime\2.3.8\lib\netstandard1.4\Microsoft.Rest.ClientRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Rest.ClientRuntime.Azure">
+      <HintPath>C:\Users\HowardEdidin\.nuget\packages\microsoft.rest.clientruntime.azure\3.3.12\lib\netstandard1.4\Microsoft.Rest.ClientRuntime.Azure.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Settings.job">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PackageRoot\Config\" />
+  </ItemGroup>
+</Project>
